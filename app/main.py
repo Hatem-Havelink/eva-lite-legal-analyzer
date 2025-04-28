@@ -1,20 +1,22 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from app.routes import router
 
+app = FastAPI(  # <-- il faut d'abord créer l'instance FastAPI ici
+    title="Eva Lite - Analyse juridique automatique",
+    description="API pour l'analyse juridique automatique de contrats (PDF, DOCX) via FastAPI et OpenAI.",
+    version="1.0.0"
+)
+
+# ➔ Ensuite seulement tu ajoutes le middleware CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ⚠️ TEMPORAIRE pour tester. Après, on restreindra à lovableproject.com
+    allow_origins=["*"],  # On ouvre à tout pour tests
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-app = FastAPI(
-    title="EVA Lite - Legal Analyzer",
-    description="Upload your contract and get an instant analysis!",
-    version="1.0"
-)
-
+# ➔ Puis tu inclus les routes
 app.include_router(router, prefix="/api")
