@@ -1,0 +1,15 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# Ignorer l'environnement virtuel
+venv/
+
+# Ignorer les fichiers système
+__pycache__/
+*.pyc
+
+# Ignorer les fichiers d'environnement
+.env
+
+# Ignorer fichiers temporaires
+.DS_Store
+*.log
+
