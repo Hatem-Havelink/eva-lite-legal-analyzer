@@ -12,7 +12,7 @@ app = FastAPI(  # <-- il faut d'abord créer l'instance FastAPI ici
 # ➔ Ensuite seulement tu ajoutes le middleware CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # On ouvre à tout pour tests
+    allow_origins=["ttps://fa03942d-5fe6-4f5f-8a53-fcb78e3dcfac.lovableproject.com"],  # On ouvre à tout pour tests
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
